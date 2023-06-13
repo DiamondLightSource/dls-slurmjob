@@ -1,0 +1,20 @@
+# Primary information needed for devops.
+primary:
+    repository_name: dls-slurmjob
+    package_name: dls_slurmjob_lib
+    one_line_description: "Simplified job submit and status using Slurm REST."
+    author:
+        name: David Erb
+        email: david.erb@diamond.ac.uk
+    project_urls:
+        GitLab: https://gitlab.diamond.ac.uk/kbp43231
+    project_scripts:
+        dls-slurmjob: "dls_slurmjob_lib.__main__:main"
+    dependencies:
+        - type: pypi
+          list:
+              - dls_mainiac
+              - dls_multiconf
+              - dls_utilpack
+              - aiohttp
+              - pydantic

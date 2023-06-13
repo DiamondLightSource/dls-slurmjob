@@ -1,0 +1,16 @@
+{
+    "script": "#!/bin/bash\n\necho \"hello\"\n",
+    "job": {
+        "current_working_directory": "/home/kbp43231/22/dls-slurmjob",
+        "environment": {
+            "DLS_SLURMJOB": "0.1.dev5+geacd897"
+        },
+        "name": "dls_slurmjob_cli",
+        "nodes": 1,
+        "open_mode": "append",
+        "oversubscribe": "false",
+        "partition": "cs04r",
+        "tasks": 1,
+        "time_limit": "00:01:00"
+    }
+}

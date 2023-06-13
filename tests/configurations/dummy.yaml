@@ -1,0 +1,4 @@
+type: dls_bxflow_lib.bx_contexts.classic
+
+dls_slurmjob_restd_specification:
+  type: "dls_slurmjob_lib.restds.dummy"
