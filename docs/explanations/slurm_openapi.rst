@@ -1,7 +1,7 @@
 OPENAPI
 =======================================================================
 
-The slurmrestd server conforms to OpenAPI.
+The slurmrestd server claims to conform to OpenAPI.
 
 To turn the OpenAPI schemas into pydantic models do these steps::
 

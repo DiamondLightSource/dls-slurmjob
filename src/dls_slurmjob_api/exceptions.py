@@ -1,10 +1,8 @@
+# Can't find something.
 class NotFound(RuntimeError):
     pass
 
 
-class DuplicateUuidException(RuntimeError):
-    pass
-
-
-class ClientConnectorError(RuntimeError):
+# Job rejected by slurm engine, for example missing some required property.
+class Rejected(RuntimeError):
     pass

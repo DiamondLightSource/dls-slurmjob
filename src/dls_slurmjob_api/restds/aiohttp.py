@@ -9,6 +9,9 @@ from dls_utilpack.describe import describe
 # Class for an aiohttp client.
 from dls_slurmjob_api.aiohttp_client import AiohttpClient
 
+# Job rejected by slurm engine, for example missing some required property.
+from dls_slurmjob_api.exceptions import Rejected
+
 # Client interface.
 from dls_slurmjob_api.interfaces.client import Interface
 
@@ -85,11 +88,7 @@ class Aiohttp(AiohttpClient, Interface):
                 f"{callsign(self)} no client connection possible to slurm server"
             )
 
-        # Make CSV of jobs and put in the url.
-        # In practice, slurmrestd seems to ignore this and always returns all jobs anyway.
-        job_ids_csv = ",".join(str(job_id) for job_id in job_ids)
-
-        url = f"jobs?job_ids={job_ids_csv}"
+        url = "jobs"
 
         logger.debug(f"{callsign(self)} client connection seems possible for {url}")
 
@@ -165,13 +164,10 @@ class Aiohttp(AiohttpClient, Interface):
                 f"{callsign(self)} no client connection possible to slurm server"
             )
 
-        with open(script_filename, "r") as script_stream:
-            script_contents = script_stream.read()
-
         properties.oversubscribe = None
 
         submission_model = OpenapiJobSubmission(
-            script=script_contents,
+            script=f"#!/bin/bash\nsource {script_filename}\n",
             job=properties,
             jobs=None,
         )
@@ -185,7 +181,7 @@ class Aiohttp(AiohttpClient, Interface):
         url = "job/submit"
 
         logger.debug(
-            f"{callsign(self)} client connection seems possible for {url}\n{submission_json}"
+            f"[SLRMSUB] {callsign(self)} client connection seems possible for {url}\n{submission_json}"
         )
 
         # Talk to the slurmrestd server.
@@ -193,7 +189,9 @@ class Aiohttp(AiohttpClient, Interface):
             url, json=submission_dict, read_until_eof=False
         )
 
-        logger.debug(describe("job submit response", response_dict))
+        logger.debug(
+            describe(f"[SLRMSUB] {callsign(self)} job submit response", response_dict)
+        )
 
         # Check the response.
         jsr = OpenapiJobSubmissionResponse(**response_dict)
@@ -206,7 +204,7 @@ class Aiohttp(AiohttpClient, Interface):
                 error_number = response_dict.get("errors")[0].get(
                     "error_code", "unknown"
                 )
-            raise RuntimeError(
+            raise Rejected(
                 f"{callsign(self)} slurmrestd error {error_number}: {error.error}"
             )
 

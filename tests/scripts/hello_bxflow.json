@@ -1,0 +1,14 @@
+{
+    "script": "#!/bin/bash\nsource /home/kbp43231/22/dls-bxflow-exemplar-workflows/nodata.bxflows/hello.007794/hello/.bxflow/main.sh\n",
+    "job": {
+        "current_working_directory": "/home/kbp43231/22/dls-bxflow-exemplar-workflows/nodata.bxflows/hello.007794/hello",
+        "environment": {
+            "DLS_SLURMJOB": "0.0.3.dev3+g9b1efad.d20230613"
+        },
+        "name": "bx_task_3cd50c32-c728-47f4-8119-dc093226a0be",
+        "open_mode": "append",
+        "partition": "cs05r",
+        "standard_error": "/home/kbp43231/22/dls-bxflow-exemplar-workflows/nodata.bxflows/hello.007794/hello/stderr.txt",
+        "standard_output": "/home/kbp43231/22/dls-bxflow-exemplar-workflows/nodata.bxflows/hello.007794/hello/stdout.txt"
+    }
+}
