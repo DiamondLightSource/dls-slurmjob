@@ -2,5 +2,9 @@
   {
     "version": "main",
     "url": "https://DiamondLightSource.github.io/dls-slurmjob/main/"
+  },
+  {
+    "version": "1.0.2",
+    "url": "https://DiamondLightSource.github.io/dls-slurmjob/1.0.2/"
   }
 ]
