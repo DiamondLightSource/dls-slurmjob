@@ -8,10 +8,6 @@ as well as versions of other depdency packages.
 
 from typing import Optional
 
-import dls_mainiac_lib.version
-import dls_normsql.version
-import dls_utilpack.version
-
 from dls_slurmjob_lib import __version__ as dls_slurmjob_lib_version
 
 
@@ -34,17 +30,35 @@ def meta(given_meta: Optional[dict] = None) -> dict:
 
     meta = {}
     meta["dls_slurmjob_lib"] = version()
-    meta.update(dls_mainiac_lib.version.meta())
-    meta.update(dls_normsql.version.meta())
-    meta.update(dls_utilpack.version.meta())
 
     try:
-        import setproctitle
+        import dls_utilpack.version
 
-        setproctitle.__version__
-        meta["setproctitle"] = setproctitle.__version__
+        meta.update(dls_utilpack.version.meta())
     except Exception:
-        meta["setproctitle"] = "unavailable"
+        meta["dls_utilpack"] = "unavailable"
+
+    try:
+        import dls_mainiac_lib.version
+
+        meta.update(dls_mainiac_lib.version.meta())
+    except Exception:
+        meta["dls_mainiac_lib"] = "unavailable"
+
+    try:
+        import dls_multiconf_lib.version
+
+        meta.update(dls_multiconf_lib.version.meta())
+    except Exception:
+        meta["dls_multiconf_lib"] = "unavailable"
+
+    try:
+        import aiohttp
+
+        aiohttp.__version__
+        meta["aiohttp"] = aiohttp.__version__
+    except Exception:
+        meta["aiohttp"] = "unavailable"
 
     if given_meta is not None:
         given_meta.update(meta)
