@@ -1,0 +1,18 @@
+/* ********** Please don't edit this file! */ 
+/* ********** It has been generated automatically by dae_devops version 0.5.4.dev3+g9aafdd5.d20230608. */ 
+/* ********** For repository_name dls-slurmjob */ 
+
+/* The theme normally has this, but I think it's ok to use the full width of the window in all @media sizes.
+
+@media (min-width: 960px)
+.bd-page-width {
+    max-width: 88rem;
+}
+
+*/
+
+.bd-page-width {
+    max-width: 100%;
+}
+
+/* dae_devops_fingerprint cd357c043348a55f3d8317f2f8024783 */ 
