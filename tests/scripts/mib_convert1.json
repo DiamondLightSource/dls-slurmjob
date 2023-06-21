@@ -1,0 +1,15 @@
+{
+    "script": "#!/bin/bash\nsource /dls/e02/data/2021/cm28158-4/processing/Merlin/test_dataset_convert/20230120_131936/mibconvert.2023-06-14.143038.452724/mib_convert/.bxflow/main.sh\n",
+    "job": {
+        "current_working_directory": "/dls/e02/data/2021/cm28158-4/processing/Merlin/test_dataset_convert/20230120_131936/mibconvert.2023-06-14.143038.452724/mib_convert",
+        "environment": {
+            "DLS_SLURMJOB_VERSION": "1.0.2"
+        },
+        "memory_per_node": 100000000,
+        "name": "bx_task_c3b0dee5-40ea-478e-999e-6b2abff7a597",
+        "open_mode": "append",
+        "partition": "cs05r",
+        "standard_error": "/dls/e02/data/2021/cm28158-4/processing/Merlin/test_dataset_convert/20230120_131936/mibconvert.2023-06-14.143038.452724/mib_convert/stderr.txt",
+        "standard_output": "/dls/e02/data/2021/cm28158-4/processing/Merlin/test_dataset_convert/20230120_131936/mibconvert.2023-06-14.143038.452724/mib_convert/stdout.txt"
+    }
+}
