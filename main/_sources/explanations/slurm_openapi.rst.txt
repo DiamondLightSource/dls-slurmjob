@@ -21,6 +21,8 @@ You can try these curls::
     $ curl -s -H X-SLURM-USER-NAME:${USER} -H X-SLURM-USER-TOKEN:${SLURM_JWT} -H "Content-Type: application/json" -X POST https://slurm-rest.diamond.ac.uk:8443/slurm/v0.0.38/job/submit -d@tests/scripts/hello1.json -v
     $ curl -s -H X-SLURM-USER-NAME:${USER} -H X-SLURM-USER-TOKEN:${SLURM_JWT} -H "Content-Type: application/json" -X POST https://slurm-rest.diamond.ac.uk:8443/slurm/v0.0.38/job/submit -d@tests/scripts/hello2.json -v
 
+sbatch tests/scripts/mib_convert1.sh
+
 Some references
 - OpenAPI Specification https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#data-types
 - datamodel-code-generator https://koxudaxi.github.io/datamodel-code-generator/

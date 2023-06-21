@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>OPENAPI &#8212; dls-slurmjob 1.0.2.dev1+g4ca05f6 documentation</title>
+    <title>OPENAPI &#8212; dls-slurmjob 1.0.3.dev1+gda8beda documentation</title>
   
   
   
@@ -50,7 +50,7 @@
     <link rel="icon" href="../_static/dls-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="About the documentation" href="docs_structure.html" />
+    <link rel="next" title="Slurm examples" href="slurm_examples.html" />
     <link rel="prev" title="Explanations" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -330,6 +330,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">OPENAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm_examples.html">Slurm examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs_structure.html">About the documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conventions.html">Naming conventions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="todo.html">TODO</a></li>
@@ -410,6 +411,7 @@ $ datamodel-codegen --input src/dls_slurmjob_api/models/openapi/openapi.json --i
 $ curl -s -H X-SLURM-USER-NAME:${USER} -H X-SLURM-USER-TOKEN:${SLURM_JWT} -H &quot;Content-Type: application/json&quot; -X POST https://slurm-rest.diamond.ac.uk:8443/slurm/v0.0.38/job/submit -d@tests/scripts/hello2.json -v
 </pre></div>
 </div>
+<p>sbatch tests/scripts/mib_convert1.sh</p>
 <p>Some references
 - OpenAPI Specification <a class="github reference external" href="https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#data-types">OAI/OpenAPI-Specification</a>
 - datamodel-code-generator <a class="reference external" href="https://koxudaxi.github.io/datamodel-code-generator/">https://koxudaxi.github.io/datamodel-code-generator/</a>
@@ -438,11 +440,11 @@ $ curl -s -H X-SLURM-USER-NAME:${USER} -H X-SLURM-USER-TOKEN:${SLURM_JWT} -H &qu
       </div>
     </a>
     <a class="right-next"
-       href="docs_structure.html"
+       href="slurm_examples.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">About the documentation</p>
+        <p class="prev-next-title">Slurm examples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

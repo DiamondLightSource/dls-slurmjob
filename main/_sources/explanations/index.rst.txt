@@ -8,6 +8,7 @@ Explanation, or discussions, clarify and illuminate a particular topic. They bro
 .. toctree::
     
     slurm_openapi
+    slurm_examples
     docs_structure
     conventions
     todo
